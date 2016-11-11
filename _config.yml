@@ -1,6 +1,6 @@
 ### Site info:
 title: Chen Jiao's blog
-tagline: Keep moving
+tagline: Keep Moving Forward
 author: chen jiao
 email: jiao.chen@outlook.com
 description: "This is Chen Jiao's blog" # You can edit this line in _config.yml. It will appear in your document head meta and in your feed.xml site description
@@ -22,7 +22,7 @@ google_analytics_key: UA-87078538-1 # put YOUR key here to enable tracking! (bla
 ### Site setting:
 ShowContactInfo: "True" # Personal Info (twitter,github,email) can be seen on aboutme-sidebar, those info only shown where ShowContactInfo == True
 default_column: "two" # blog style: two columns, if default_column != "two", you will see a one column blog.
-default_locale: "en" # blog sidebar language set, only include: English (en), Chinese (cn), Japanese (jp), Polish (pl), Korean (kr) and Russian (ru) 
+default_locale: "en" # blog sidebar language set, only include: English(en), Chinese (cn) and Japanese (jp)
 
 locales:
     en:

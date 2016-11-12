@@ -5,7 +5,7 @@ author: chen jiao
 email: jiao.chen@outlook.com
 description: "This is Chen Jiao's blog" # You can edit this line in _config.yml. It will appear in your document head meta and in your feed.xml site description
 #keywords: "Jekyll, theme, Freshman21"
-#baseurl: "/freshman21" # the subpath of your site, e.g. /blog/
+baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://chen-jiao.github.io" # the base hostname & protocol for your site
 locale: en_US
 

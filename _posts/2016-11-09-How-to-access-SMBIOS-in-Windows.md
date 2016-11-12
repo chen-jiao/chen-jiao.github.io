@@ -1,4 +1,4 @@
---- 
+---
 layout: post
 title: How to access SMBIOS in Windows
 author: Jiao
@@ -6,7 +6,7 @@ category: articles
 tags: 
 - Windows
 - SMBIOS
-comments: true
+  comments: true
 ---
 
 ## SMBIOS architecture
@@ -17,21 +17,14 @@ For OS-present, OS-absent, and pre-OS environments, SMBIOS offers motherboard an
 
 ### SMBIOS Entry Point Structure
 
-The only access method defined for the SMBIOS structures is a table-based method, defined in version 2.1 of SMBIOS spec
-
-It provides the SMBIOS structures as a packed list of data referenced by a table entry point.
-
-How to recognized SMBIOS Entry Point structure
-
-Anchor String and Intermediate Anchor String
-
-BYTE[0x00] — '_SM_'(5F 53 4D 5F)
-
-BYTE[0x10] — '_DMI_'(5F 44 4D 49 5F)
-
-Other information in Entry Point Structure (detail defined in spec)
-
-include SMBIOS version, structure table address, number of SMBIOS Structures, etc.
+- The only access method defined for the SMBIOS structures is a table-based method, defined in version 2.1 of SMBIOS spec
+- It provides the SMBIOS structures as a packed list of data referenced by a table entry point.
+- How to recognized SMBIOS Entry Point structure
+  - Anchor String and Intermediate Anchor String
+    - BYTE[0x00] — '_SM_'(5F 53 4D 5F)
+    - BYTE[0x10] — '_DMI_'(5F 44 4D 49 5F)
+- Other information in Entry Point Structure (detail defined in spec)
+  - include SMBIOS version, structure table address, number of SMBIOS Structures, etc.
 
 ### SMBIOS structures
 
@@ -49,63 +42,64 @@ And SMBIOS structures contains many information about the hardware platform, suc
 
 #### Header format of each structure
 
+![](/images/How-to-access-SMBIOS-in-Windows/HearderFormat.png)
+
 #### Samples of some structures
 
-##### BIOS information with string
+BIOS information with string
 
-##### BIOS information without string
+![](/images/How-to-access-SMBIOS-in-Windows/BIOS_Info_With_String.png)
+
+BIOS information without string
+
+![](/images/How-to-access-SMBIOS-in-Windows/BIOS_Info_Without_String.png)
 
 ## SMBIOS in Windows
 
 ### Microsoft SMBIOS Driver
 
-Support by windows XP SP2 and later OS
-
-collects information and stores this information in the registry at HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Mssmbios\Data
+- Support by windows XP SP2 and later OS
+- collects information and stores this information in the registry at HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Mssmbios\Data
 
 ### Access SMBIOS
 
 #### Different ways of access SMBIOS
 
-Access registry (no guarantee)
-
-System APIs for Reading SMBIOS Data (for applications)
-
-Using WMI (for drivers)
+- Access registry (no guarantee)
+- System APIs for Reading SMBIOS Data (for applications)
+- Using WMI (for drivers)
 
 #### Key structure for Driver access SMBIOS
 
-> *struct RawSMBIOSData*
->
-> *{*
->
-> *BYTE    Used20CallingMethod;*
->
-> *BYTE    SMBIOSMajorVersion;*
->
-> *BYTE    SMBIOSMinorVersion;*
->
-> *BYTE    DmiRevision;*
->
-> *DWORD   Length;                     // length of SMBIOSTableData*
->
-> *BYTE    SMBIOSTableData[];   // all smbios structures*
->
-> *};*
+```c++
+struct RawSMBIOSData
+{
+	BYTE Used20CallingMethod;
+	BYTE SMBIOSMajorVersion;
+	BYTE SMBIOSMinorVersion;
+	BYTE DmiRevision;
+	DWORD Length;			// length of SMBIOSTableData
+	BYTE SMBIOSTableData[];	// all smbios structures
+}
+```
 
 The SMBIOSTableData property contains the entire SMBIOS data table, except for the SMBIOS structure table entry point.
 
 ### Key APIs:
 
-Application: 
+- Application:
 
-"**\*EnumSystemFirmwareTables()***" and "**\*GetSystemFirmwareTable()***"
+  "***EnumSystemFirmwareTables()***" and "***GetSystemFirmwareTable()***"
 
-Driver:
+- Driver:
 
-Windows XP and later: "**\*IoWmiOpenBlock()***" and the "**\*IoWMIQueryAllData()***"
+  - Windows XP and later: 
 
-Windows Vista and later: "**\*AuxKlibGetSystemFirmwareTable()***"
+    "***IoWmiOpenBlock()***" and the "***IoWMIQueryAllData()***"
+
+  - Windows Vista and later:
+
+    "***AuxKlibGetSystemFirmwareTable()***"
 
 ### How to check SMBIOS data correct
 

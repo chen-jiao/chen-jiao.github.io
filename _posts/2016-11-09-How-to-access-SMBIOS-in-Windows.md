@@ -6,7 +6,7 @@ category: articles
 tags: 
 - Windows
 - SMBIOS
-  comments: true
+comments: true
 ---
 
 ## SMBIOS architecture

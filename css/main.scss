@@ -54,7 +54,8 @@ $on-laptop:        800px;
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
         "base",
-        "layout"
+        "layout",
+        "_syntax-highlighting-native" // "syntax-highlighting"
 ;
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');

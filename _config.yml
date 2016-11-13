@@ -149,8 +149,7 @@ locales:
 markdown: kramdown
 #highlighter: pygments
 kramdown:
-        input: GFM
-        syntax_highlighter: rouge
+        highlighter: rouge
 gems: [jekyll-paginate]
 paginate: 5
 excerpt_separator: <!-- more -->

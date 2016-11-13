@@ -21,28 +21,28 @@ dl, dd, ol, ul, figure {
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: normal;
-    src: local('Open Sans Regular'),url('/_sass/github/400.woff') format('woff')
+    src: local('Open Sans Regular'),url('./github/400.woff') format('woff')
 }
 
 @font-face {
     font-family: 'Open Sans';
     font-style: italic;
     font-weight: normal;
-    src: local('Open Sans Italic'),url('/_sass/github/400i.woff') format('woff')
+    src: local('Open Sans Italic'),url('./github/400i.woff') format('woff')
 }
 
 @font-face {
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: bold;
-    src: local('Open Sans Bold'),url('/_sass/github/700.woff') format('woff')
+    src: local('Open Sans Bold'),url('./github/700.woff') format('woff')
 }
 
 @font-face {
     font-family: 'Open Sans';
     font-style: italic;
     font-weight: bold;
-    src: local('Open Sans Bold Italic'),url('/_sass/github/700i.woff') format('woff')
+    src: local('Open Sans Bold Italic'),url('./github/700i.woff') format('woff')
 }
 
 html {

@@ -159,16 +159,18 @@ li>ol,
 li>ul {
     margin: 0 0;
 }
-hr {
-    height: 4px;
-    padding: 0;
-    margin: 16px 0;
-    background-color: #e7e7e7;
-    border: 0 none;
-    overflow: hidden;
-    box-sizing: content-box;
-    border-bottom: 1px solid #ddd;
-}
+/**
+*hr {
+*    height: 2px;
+*    padding: 0;
+*    margin: 16px 0;
+*    background-color: #e7e7e7;
+*    border: 0 none;
+*    overflow: hidden;
+*    box-sizing: content-box;
+*    border-bottom: 1px solid #ddd;
+*}
+**/
 
 body > h2:first-child {
     margin-top: 0;
@@ -416,7 +418,15 @@ header, .context-menu, .megamenu-content, footer{
 /**
  * Set main page style
  */
-
+.site-title {
+    font-size: 48px;
+    line-height: 56px;
+    letter-spacing: -1px;
+    margin-bottom: 0;
+    text-align: center;
+    text-decoration: none;
+}
+ 
 .container {
   min-height:100%;
   max-width: -webkit-calc(#{$page-width} - (#{$spacing-unit} * 2));

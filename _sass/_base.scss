@@ -570,12 +570,14 @@ a {
  * line between each post on main page
  */
 
-hr{
-  margin-bottom: 30px;
-  border: 0;
-  border-bottom: 1px dotted #ccc;
-}
-
+/**
+*hr{
+*  margin-bottom: 30px;
+*  border: 0;
+*  border-bottom: 1px dotted #ccc;
+*}
+ */
+ 
 cite{ 
   font-style: italic;
   text-decoration: underline;

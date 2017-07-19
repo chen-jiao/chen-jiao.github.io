@@ -30,6 +30,7 @@ layout: default
     </header>
 
     <article class="post-content" itemprop="articleBody">
+      {{ post.content | strip_html | strip_newlines | truncate:100 }}
       {% if post.content contains site.excerpt_separator %}
       {{ post.excerpt }}
       <p style="text-align: right"><a href="{{ post.url | prepend: site.baseurl }}">Read more</a></p>

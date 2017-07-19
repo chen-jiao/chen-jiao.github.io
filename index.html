@@ -31,6 +31,7 @@ layout: default
 
     <article class="post-content" itemprop="articleBody">
       {{ post.content | strip_html | strip_newlines | truncate:100 }}
+      <p style="text-align: right"><a href="{{ post.url | prepend: site.baseurl }}">Read more</a></p>
     </article>
     <hr />
 

@@ -2,6 +2,7 @@
 layout: post
 title: How to access SMBIOS in Windows
 author: Jiao
+description: "SMBIOS structure + Access SMBIOS"
 category: articles
 tags: 
 - Windows

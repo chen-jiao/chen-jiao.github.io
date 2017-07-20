@@ -2,7 +2,8 @@
 layout: post
 title: How to access SMBIOS in Windows
 author: Jiao
-description: "SMBIOS structure + Access SMBIOS"
+description: Introduction the structure of SMBIOS, and how to access SMBIOS in wiondows.
+Keywords: SMBIOS structure, Access SMBIOS
 category: articles
 tags: 
 - Windows
